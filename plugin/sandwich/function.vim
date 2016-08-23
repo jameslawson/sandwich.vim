@@ -31,6 +31,9 @@ function! CloseBrackets(closebracket)
   return ''
 endfunction
 
+inoremap ' <c-r>=SmartQuotes("'")<cr>
+inoremap " <c-r>=SmartQuotes('"')<cr>
+
 function! sandwich#function#foo(x)
   return 1
 endfunction
