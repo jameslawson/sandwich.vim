@@ -23,11 +23,18 @@ depending on whether or not the cursor is already sitting on a `)`.
 
 ## Development
 
-You'll need to have a Ruby environment setup.
+You'll need to have a ruby v2+ environment setup.
+
+```
+$ ruby -v
+ruby 2.2.3p173 (2015-08-18 revision 51636) [x86_64-darwin14]
+$ git clone git@github.com:jameslawson/sandwich.vim.git
+$ cd sandwich.vim
+$ bundle install
+```
 
 In order to run the **unit tests**:
 ```
-bundle install
 rake test
 ```
 
