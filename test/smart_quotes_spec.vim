@@ -15,16 +15,16 @@ describe 'Smart Quotes'
     close!
   end
 
-  " it 'should cursor move right when cursor on a quote'
-  "   put! = "''"
-  "   normal! gg$
-  "   call SmartQuotes("'")
+  it 'should cursor move right when cursor on a quote'
+    put! = "''"
+    normal! gg$
+    call SmartQuotes("'")
 
-  "   Expect getline(1) == "''"
-  "   Expect col('.') == 2
-  " end
+    Expect getline(1) == "''"
+    Expect col('.') == 2
+  end
 
-  it 'should insert "" in an empty buffer'
+  it 'should insert two single quotes in an empty buffer'
     put! = ''
     call SmartQuotes("'")
 
@@ -32,7 +32,7 @@ describe 'Smart Quotes'
     Expect col('.') == 2
   end
 
-  it 'should insert "" at the end of a line'
+  it 'should insert two single quotes at the end of a line'
     put! = 'foo'
     normal! gg$
     execute "normal a'"
