@@ -1,4 +1,4 @@
 language: ruby
 rvm:
-  - 2.2.3p173
+  - 2.0.0-p247
 script: rake ci
