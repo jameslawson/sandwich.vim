@@ -62,12 +62,12 @@ if (exists('g:sandwich_enable_single_quote') && g:sandwich_enable_single_quote =
   inoremap ' <c-r>=SmartQuotes("'")<cr>
 endif
 
-if exists('g:sandwich_enable_curly_brace' && g:sandwich_enable_curly_brace ==# 1)
+if (exists('g:sandwich_enable_curly_brace') && g:sandwich_enable_curly_brace ==# 1)
   inoremap { {}<esc>i
   inoremap } <c-r>=SmartClose('}')<cr>
 endif
 
-if exists('g:sandwich_enable_parenthesis' && g:sandwich_enable_parenthesis ==# 1)
+if (exists('g:sandwich_enable_parenthesis') && g:sandwich_enable_parenthesis ==# 1)
   inoremap ( ()<esc>i
   inoremap ) <c-r>=SmartClose(')')<cr>
 endif
