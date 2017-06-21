@@ -64,12 +64,12 @@ endif
 
 if (exists('g:sandwich_enable_curly_brace') && g:sandwich_enable_curly_brace ==# 1)
   inoremap { {}<esc>i
-  inoremap } <c-r>=SmartClose('}')<cr>
+  inoremap } <c-r>=CloseBrackets('}')<cr>
 endif
 
 if (exists('g:sandwich_enable_parenthesis') && g:sandwich_enable_parenthesis ==# 1)
   inoremap ( ()<esc>i
-  inoremap ) <c-r>=SmartClose(')')<cr>
+  inoremap ) <c-r>=CloseBrackets(')')<cr>
 endif
 
 let g:sandwich_loaded_function = 1
