@@ -20,6 +20,16 @@ In insert mode:
 depending on whether or not the cursor is already sitting on a `)`.
 3. Similar rules apply for adding single quotes (`'`) and double quotes (`"`).
 
+## Config
+
+You can disable features by setting the appropriate flags in your `.vimrc`:
+```vim
+let g:sandwich_enable_double_quote = 0   " disable double quote sandwiches
+let g:sandwich_enable_single_quote = 0   " disable single quote sandwiches
+let g:sandwich_enable_curly_brace = 0    " disable curly brace sandwiches
+let g:sandwich_enable_parenthesis = 0    " disable parenthesis sandwiches
+```
+
 
 ## Development
 
