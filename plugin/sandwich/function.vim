@@ -31,7 +31,6 @@ function! CloseBrackets(closebracket)
   if (sitting ==# a:closebracket)
     " -- move the cursor right
     call cursor(line("."), col + 1)
-    return ''
   else
     " -- add the closing bracket
     execute "normal! a" . a:closebracket
