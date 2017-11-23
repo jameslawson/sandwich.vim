@@ -16,7 +16,7 @@ describe 'CloseBrackets'
       " place cursor abc|defg
       normal! ^lll
       call CloseBrackets(')')
-      Expect getline(1) == 'abc)efg'
+      Expect getline(1) == 'abc)defg'
     end
 
     it 'should insert ) when cursor is at the end of line'

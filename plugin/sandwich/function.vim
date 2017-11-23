@@ -24,16 +24,18 @@ function! SmartQuotes(thequote)
   return ''
 endfunction
 
-
 function! CloseBrackets(closebracket)
   let col = col(".")
   let sitting = getline(".")[col - 1]
+  let end_of_line = col(".") == col("$") - 1
   if (sitting ==# a:closebracket)
     " -- move the cursor right
     call cursor(line("."), col + 1)
   else
     " -- add the closing bracket
-    execute "normal! a" . a:closebracket
+    "    use append instead of insert if cursor is at end of line
+    let command = end_of_line ? "a" : "i"
+    execute "normal! " . command . a:closebracket
   endif
   return ''
 endfunction
