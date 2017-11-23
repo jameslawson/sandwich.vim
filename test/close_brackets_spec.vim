@@ -11,7 +11,15 @@ describe 'CloseBrackets'
   end
 
   describe 'typing )'
-    it 'should insert )'
+    it 'should insert ) when cursor is in the middle of line'
+      put! = 'abcdefg'
+      " place cursor abc|defg
+      normal! ^lll
+      call CloseBrackets(')')
+      Expect getline(1) == 'abc)defg'
+    end
+
+    it 'should insert ) when cursor is at the end of line'
       put! = 'foo'
       normal! gg$
       call CloseBrackets(')')
