@@ -4,7 +4,7 @@
 " Author: James Lawson <jameslawson@users.noreply.github.com>
 " License: MIT license
 " Description: A vim plugin for brackets and quotes
-"
+"============================================================
 
 if (exists('g:sandwich_loaded_function') && g:sandwich_loaded_function ==# 1)
   finish
@@ -25,18 +25,12 @@ function! SmartQuotes(thequote)
 endfunction
 
 function! CloseBrackets(closebracket)
-  let col = col(".")
-  let sitting = getline(".")[col - 1]
-  let end_of_line = col(".") == col("$") - 1
-  if (sitting ==# a:closebracket)
-    " -- move the cursor right
-    call cursor(line("."), col + 1)
-  else
-    " -- add the closing bracket
-    "    use append instead of insert if cursor is at end of line
-    let command = end_of_line ? "a" : "i"
-    execute "normal! " . command . a:closebracket
+  let curr = getline('.')[col('.') - 1]
+  if (curr !=# a:closebracket)
+    execute 'normal! i' . a:closebracket
   endif
+  " -- move the cursor right
+  call cursor(line('.'), col('.') + 1)
   return ''
 endfunction
 
@@ -53,7 +47,6 @@ endif
 if !exists('g:sandwich_enable_parenthesis')
   let g:sandwich_enable_parenthesis = 1
 endif
-
 
 if (exists('g:sandwich_enable_double_quote') && g:sandwich_enable_double_quote ==# 1)
   inoremap " <c-r>=SmartQuotes('"')<cr>
